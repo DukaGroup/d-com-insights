@@ -10,6 +10,7 @@ import {
   Upload,
   FileText,
   ClipboardList,
+  CalendarDays,
   X,
 } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
@@ -30,6 +31,7 @@ const navItems = [
   { to: "/financial-reports", icon: FileText, label: "Raportet Financiar" },
   { to: "/procedures", icon: ClipboardList, label: "Procedurat" },
   { to: "/protokolli", icon: FileText, label: "Protokolli" },
+  { to: "/annual-leaves", icon: CalendarDays, label: "Lejet Vjetore" },
   { to: "/admin", icon: Upload, label: "Admin Panel" },
 ];
 
