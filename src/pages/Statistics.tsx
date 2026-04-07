@@ -8,7 +8,7 @@ const Statistics = () => {
   const [tab, setTab] = useState<Tab>("shops");
 
   const tabs: { key: Tab; label: string }[] = [
-    { key: "shops", label: "Nivel Shopi" },
+    { key: "shops", label: "Arritjet në Nivel Shopi" },
     { key: "sm", label: "Store Managers" },
     { key: "sr", label: "Sales Reps" },
     { key: "top3", label: "Të Dalluarit" },
@@ -18,8 +18,8 @@ const Statistics = () => {
     <div className="space-y-6 animate-fade-in">
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-foreground">Statistikat</h1>
-          <p className="text-muted-foreground">Arritjet dhe performanca</p>
+          <h1 className="text-2xl font-bold text-foreground">Arritjet e Targeteve</h1>
+          <p className="text-muted-foreground">Arritjet e targeteve dhe performanca mujore</p>
         </div>
         <button className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
           <Upload className="h-4 w-4" />

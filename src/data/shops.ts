@@ -4,9 +4,10 @@ export interface Shop {
   address: string;
   status: "Aktiv" | "Joaktiv";
   city: string;
+  imageUrl?: string;
 }
 
-export const shops: Shop[] = [
+const shopRows: Omit<Shop, "imageUrl">[] = [
   { id: 1, name: "One Shop Don Bosko", address: "Tirane, Rr. Don Bosko, Pall 326, kati perdhe", status: "Aktiv", city: "Tiranë" },
   { id: 2, name: "One Shop Ballsh", address: "Fier, Lagjja 28 Nëntori, Rruga Shetitorja, Ballsh", status: "Aktiv", city: "Ballsh" },
   { id: 3, name: "One Shop Fushe Kruje", address: "Fushe Kruje, Lagja Kastrioti, qender", status: "Aktiv", city: "Fushë-Krujë" },
@@ -52,3 +53,19 @@ export const shops: Shop[] = [
   { id: 43, name: "One Corner Maminas 1", address: "Durres, Shijak, ZK 3796, Kati i pare", status: "Aktiv", city: "Maminas" },
   { id: 44, name: "Mobile Van D-COM", address: "AB920PM", status: "Aktiv", city: "Mobile" },
 ];
+
+const SHOP_IMAGE_COUNT = 41;
+const shopImageFiles = Array.from(
+  { length: SHOP_IMAGE_COUNT },
+  (_, index) => `shop-${String(index + 1).padStart(2, "0")}.jpeg`
+);
+
+export const shops: Shop[] = shopRows.map((shop, index) => {
+  const imageFile = shopImageFiles.length
+    ? shopImageFiles[index % shopImageFiles.length]
+    : undefined;
+  return {
+    ...shop,
+    imageUrl: imageFile ? `/shop-images/${imageFile}` : "/placeholder.svg",
+  };
+});

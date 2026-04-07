@@ -13,6 +13,9 @@ import Organogram from "@/pages/Organogram";
 import Staff from "@/pages/Staff";
 import Statistics from "@/pages/Statistics";
 import Admin from "@/pages/Admin";
+import FinancialReports from "@/pages/FinancialReports";
+import Procedures from "@/pages/Procedures";
+import Protokolli from "@/pages/Protokolli";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +34,9 @@ const ProtectedRoutes = () => {
         <Route path="/organogram" element={<Organogram />} />
         <Route path="/staff" element={<Staff />} />
         <Route path="/statistics" element={<Statistics />} />
+        <Route path="/financial-reports" element={<FinancialReports />} />
+        <Route path="/procedures" element={<Procedures />} />
+        <Route path="/protokolli" element={<Protokolli />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

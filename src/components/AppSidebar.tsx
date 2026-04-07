@@ -8,6 +8,8 @@ import {
   Info,
   LogOut,
   Upload,
+  FileText,
+  ClipboardList,
 } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { cn } from "@/lib/utils";
@@ -18,7 +20,10 @@ const navItems = [
   { to: "/shops", icon: Store, label: "Database Shop" },
   { to: "/organogram", icon: Network, label: "Organograma" },
   { to: "/staff", icon: Users, label: "Stafi" },
-  { to: "/statistics", icon: BarChart3, label: "Statistikat" },
+  { to: "/statistics", icon: BarChart3, label: "Arritjet e Targeteve" },
+  { to: "/financial-reports", icon: FileText, label: "Raportet Financiar" },
+  { to: "/procedures", icon: ClipboardList, label: "Procedurat" },
+  { to: "/protokolli", icon: FileText, label: "Protokolli" },
   { to: "/admin", icon: Upload, label: "Admin Panel" },
 ];
 
@@ -29,13 +34,13 @@ const AppSidebar = () => {
   return (
     <aside className="fixed left-0 top-0 z-40 flex h-screen w-64 flex-col bg-sidebar text-sidebar-foreground">
       {/* Logo */}
-      <div className="flex h-16 items-center gap-3 border-b border-sidebar-border px-6">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sidebar-primary font-bold text-sidebar-primary-foreground text-sm">
-          D
-        </div>
-        <div>
-          <h1 className="text-base font-bold tracking-tight text-sidebar-foreground">D-COM</h1>
-          <p className="text-[10px] text-sidebar-muted uppercase tracking-widest">Portali Intern</p>
+      <div className="border-b border-sidebar-border px-4 py-3">
+        <div className="overflow-hidden rounded-md border border-sidebar-border/40 bg-white p-1.5">
+          <img
+            src="/branding/dcom-logo-clean.png"
+            alt="D-COM logo"
+            className="h-12 w-full object-contain"
+          />
         </div>
       </div>
 
